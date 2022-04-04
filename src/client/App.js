@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import Header from './components/Header';
+import Body from './components/Body';
 
 const AppContainer = styled.div`
   margin: 0;
@@ -9,7 +10,7 @@ const AppContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-`
+`;
 
 const App = () => {
   return (
@@ -17,7 +18,7 @@ const App = () => {
       <Header />
       <Body />
     </AppContainer>
-  )
-}
+  );
+};
 
 export default App;

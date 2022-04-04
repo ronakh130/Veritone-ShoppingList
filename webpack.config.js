@@ -39,6 +39,7 @@ module.exports = {
       directory: path.resolve(__dirname, 'dist'),
       publicPath: '/',
     },
+    hot: true,
     proxy: {
       '/': {
         target: 'http://localhost:3000',

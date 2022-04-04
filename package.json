@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run dev & npm run server",
     "server": "nodemon ./src/server/main.js",
-    "dev": "webpack-dev-server --hot --open"
+    "dev": "webpack-dev-server --mode development --open"
   },
   "keywords": [],
   "author": "Ronak Hirpara",
