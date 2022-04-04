@@ -15,6 +15,7 @@ const App = () => {
   return (
     <AppContainer>
       <Header />
+      <Body />
     </AppContainer>
   )
 }
