@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import Checkbox from './Checkbox';
+import Controls from './Controls';
 
 const ItemWrapper = styled.div`
   display: flex;
@@ -41,21 +42,6 @@ const ItemDesc = styled.p`
   color: var(--item-desc);
 `;
 
-const ControlIcons = styled.div`
-  flex: 0 1 15%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-  div {
-    color: var(--control-icons);
-  }
-
-  div:hover {
-    cursor: pointer;
-  }
-`;
-
 const ListItem = (props) => {
   const { name, desc, isChecked } = props.item;
 
@@ -66,10 +52,7 @@ const ListItem = (props) => {
         <ItemName>{name}</ItemName>
         <ItemDesc>{desc}</ItemDesc>
       </Textbox>
-      <ControlIcons>
-        <div className='material-icons-outlined'>edit</div>
-        <div className='material-icons-outlined'>delete</div>
-      </ControlIcons>
+      <Controls />
     </ItemWrapper>
   );
 };
