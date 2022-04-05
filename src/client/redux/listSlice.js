@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   shoppingList: [
     {
-      name: 'test1',
-      desc: 'desc1',
+      name: 'Tomatoes',
+      desc: 'Red',
       isChecked: true,
     },
     {
-      name: 'test2',
-      desc: 'desc2',
+      name: 'Potatoes',
+      desc: 'Blue',
       isChecked: false,
     },
   ],
