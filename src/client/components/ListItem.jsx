@@ -58,6 +58,10 @@ const ControlIcons = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
+  div {
+    color: var(--control-icons);
+  }
+
   div:hover {
     cursor: pointer;
   }
