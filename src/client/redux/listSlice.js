@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  list: [],
+  shoppingList: [],
+  addModalOpen: false,
 };
 
 export const listSlice = createSlice({
@@ -9,14 +10,17 @@ export const listSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      
+      state.shoppingList.push(action.payload);
     },
     removeItem: (state, action) => {
 
     },
+    openAddModal: (state) => {
+      state.addModalOpen = !state.addModalOpen;
+    }
   },
 });
 
-export const { addItem, removeItem } = listSlice.actions;
+export const { addItem, removeItem, openAddModal } = listSlice.actions;
 
 export default listSlice.reducer;

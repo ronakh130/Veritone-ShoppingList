@@ -1,15 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { openAddModal } from '../redux/listSlice';
-import EmptyList from './EmptyList';
-
-const BodyContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import { addItem, openAddModal } from '../redux/listSlice';
 
 const EmptyContainer = styled.div`
   margin-top: -10%;
@@ -51,16 +43,23 @@ const AddItemButton = styled.button`
   }
 `;
 
-const Body = () => {
-  const shoppingList = useSelector(state => state.list.shoppingList);
 
-  const Cart = shoppingList.length ? <FilledList /> : <EmptyList />;
+const EmptyList = () => {
+  const dispatch = useDispatch();
+  const addModalOpen = useSelector((state) => state.list.addModalOpen);
+
+  function addItemClick() {
+    dispatch(openAddModal());
+    console.log(addModalOpen);
+    dispatch(addItem('test'));
+  }
 
   return (
-    <BodyContainer>
-      {Cart}
-    </BodyContainer>
+    <EmptyContainer>
+      <EmptyMessage>Your shopping list is empty :(</EmptyMessage>
+      <AddItemButton onClick={addItemClick}>Add your first item</AddItemButton>
+    </EmptyContainer>
   );
-};
+}
 
-export default Body;
+export default EmptyList
