@@ -1,7 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  shoppingList: [],
+  shoppingList: [
+    {
+      name: 'test1',
+      desc: 'desc1',
+      isChecked: true,
+    },
+    {
+      name: 'test2',
+      desc: 'desc2',
+      isChecked: false,
+    },
+  ],
   addModalOpen: false,
 };
 

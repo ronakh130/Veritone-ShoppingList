@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, openAddModal } from '../redux/listSlice';
+import Button from './Button';
 
 const EmptyContainer = styled.div`
   margin-top: -10%;
@@ -20,29 +21,8 @@ const EmptyMessage = styled.p`
   font-weight: 500;
   font-size: 1rem;
   text-align: center;
-  color: #87898c;
+  color: var(--menu-border);
 `;
-
-const AddItemButton = styled.button`
-  padding: 0.5rem 1rem;
-  background-color: var(--button-primary);
-  color: white;
-  border: none;
-  border-radius: 0.2rem;
-  transition: 100ms;
-
-  &:hover {
-    cursor: pointer;
-    background-color: var(--button-primary-hover);
-    transition: 100ms;
-  }
-
-  &:active {
-    background-color: var(--button-primary-active);
-    transition: 100ms;
-  }
-`;
-
 
 const EmptyList = () => {
   const dispatch = useDispatch();
@@ -51,15 +31,22 @@ const EmptyList = () => {
   function addItemClick() {
     dispatch(openAddModal());
     console.log(addModalOpen);
-    dispatch(addItem('test'));
+    //temporarily add to list
+    dispatch(
+      addItem({
+        name: 'test',
+        desc: 'desc',
+        isChecked: false,
+      })
+    );
   }
 
   return (
     <EmptyContainer>
       <EmptyMessage>Your shopping list is empty :(</EmptyMessage>
-      <AddItemButton onClick={addItemClick}>Add your first item</AddItemButton>
+      <Button buttonText={'Add your first item'} clickFunc={addItemClick}/>
     </EmptyContainer>
   );
-}
+};
 
-export default EmptyList
+export default EmptyList;
