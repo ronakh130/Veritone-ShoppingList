@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
+import Checkbox from './Checkbox';
+
 const ItemWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -15,19 +17,6 @@ const ItemWrapper = styled.div`
     border: 0.1rem solid var(--button-primary);
     transition: 200ms;
   }
-`;
-
-const CheckboxContainer = styled.div`
-  flex: 0 0 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Checkbox = styled.input`
-  height: 1.4rem;
-  width: 1.4rem;
-  cursor: pointer;
 `;
 
 const Textbox = styled.div`
@@ -72,9 +61,7 @@ const ListItem = (props) => {
 
   return (
     <ItemWrapper>
-      <CheckboxContainer>
-        <Checkbox type='checkbox' checked={isChecked} />
-      </CheckboxContainer>
+      <Checkbox isChecked={isChecked} />
       <Textbox>
         <ItemName>{name}</ItemName>
         <ItemDesc>{desc}</ItemDesc>
