@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Button } from '@mui/material';
 
 const BodyContainer = styled.div`
   flex: 1;
@@ -29,36 +28,32 @@ const EmptyMessage = styled.p`
   color: #87898c;
 `;
 
-// const AddItemButton = styled.button`
-//   padding: 0.5rem 1rem;
-//   background-color: #1871e8;
-//   color: white;
-//   border: none;
-//   border-radius: 0.2rem;
+const AddItemButton = styled.button`
+  padding: 0.5rem 1rem;
+  background-color: var(--button-primary);
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+  transition: 100ms;
 
-//   &:hover {
-//     cursor: pointer;
-//   }
+  &:hover {
+    cursor: pointer;
+    background-color: var(--button-primary-hover);
+    transition: 100ms;
+  }
 
-//   &:active {
-//     border: inset
-//   }
-// `;
+  &:active {
+    background-color: var(--button-primary-active);
+    transition: 100ms;
+  }
+`;
 
 const Body = () => {
   return (
     <BodyContainer>
       <EmptyContainer>
         <EmptyMessage>Your shopping list is empty :(</EmptyMessage>
-        <Button
-          variant='contained'
-          sx={{
-            px: 4,
-            py: 1,
-          }}
-        >
-          Add your first item
-        </Button>
+        <AddItemButton>Add your first item</AddItemButton>
       </EmptyContainer>
     </BodyContainer>
   );
