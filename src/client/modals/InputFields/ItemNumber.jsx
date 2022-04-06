@@ -8,6 +8,7 @@ const Dropdown = styled.select`
   font-family: 'Nunito', sans-serif;
   width: 87.5%;
   border: 0.1rem solid var(--modal-inputs);
+  color: var(--modal-placeholders);
 `;
 
 const ItemNumber = ({ text }) => {

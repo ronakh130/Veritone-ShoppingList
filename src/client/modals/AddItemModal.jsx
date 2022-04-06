@@ -6,6 +6,7 @@ import Subtitle from './ModalText/Subtitle';
 import ItemName from './InputFields/ItemName';
 import ItemDesc from './InputFields/ItemDesc';
 import ItemNumber from './InputFields/ItemNumber';
+import ConfirmButtons from './ConfirmButtons';
 
 const AddModal = styled.div`
   width: 30rem;
@@ -15,10 +16,11 @@ const AddModal = styled.div`
   border-bottom: 0.5rem solid var(--checkbox-filled);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 const BodyWrapper = styled.div`
-  flex: 1 0 80%;
+  flex: 1 1 80%;
 `;
 
 const AddItemModal = () => {
@@ -31,8 +33,8 @@ const AddItemModal = () => {
         <ItemName text={'Item Name'} />
         <ItemDesc text={'Description'} />
         <ItemNumber text={'How many?'} />
-        
       </BodyWrapper>
+      <ConfirmButtons />
     </AddModal>
   )
 }

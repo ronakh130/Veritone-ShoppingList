@@ -4,7 +4,7 @@ import ExitModal from './ExitModal';
 
 const ModalHeaderWrapper = styled.div`
   width: 100%;
-  height: 5rem;
+  flex: 0 0 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

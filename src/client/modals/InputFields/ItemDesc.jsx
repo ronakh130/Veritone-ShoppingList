@@ -9,6 +9,7 @@ const InputDesc = styled.textarea`
   width: 80%;
   height: 20%;
   border: 0.1rem solid var(--modal-inputs);
+  resize: none;
 
   ::placeholder {
     color: var(--modal-placeholders);
