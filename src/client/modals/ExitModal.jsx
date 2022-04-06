@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useDispatch } from 'react-redux';
+import { closeModal } from '../redux/modalSlice';
 
 const Icon = styled.span`
   padding: 0rem 1.5rem;
@@ -18,9 +20,13 @@ const Icon = styled.span`
   }
 `;
 
-const ExitModal = () => {
-  const handleClick = () => {
+const ExitModal = ({ modal }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = (event) => {
+    event.preventDefault();
     console.log('exit');
+    dispatch(closeModal({ modal }));
   };
 
   return (

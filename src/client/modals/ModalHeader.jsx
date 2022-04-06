@@ -18,11 +18,11 @@ const ModalTitle = styled.div`
   padding: 0rem 1.5rem;
 `;
 
-const ModalHeader = () => {
+const ModalHeader = ({modal}) => {
   return (
     <ModalHeaderWrapper>
       <ModalTitle>SHOPPING LIST</ModalTitle>
-      <ExitModal />
+      <ExitModal modal={modal}/>
     </ModalHeaderWrapper>
   );
 };

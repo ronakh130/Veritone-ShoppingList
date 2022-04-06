@@ -26,7 +26,7 @@ const BodyWrapper = styled.div`
 const AddItemModal = () => {
   return (
     <AddModal>
-      <ModalHeader />
+      <ModalHeader modal={'add'}/>
       <BodyWrapper>
         <Title text={'Add an Item'} />
         <Subtitle text={'Add your new item below'} />
@@ -34,7 +34,7 @@ const AddItemModal = () => {
         <ItemDesc text={'Description'} />
         <ItemNumber text={'How many?'} />
       </BodyWrapper>
-      <ConfirmButtons />
+      <ConfirmButtons modal={'add'}/>
     </AddModal>
   )
 }
