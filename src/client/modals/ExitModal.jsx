@@ -1,15 +1,29 @@
 import React from 'react';
+import styled from '@emotion/styled';
 
-const style = {
-  padding: '0rem 1.5rem',
-  color: 'var(--control-icons)',
-};
+const Icon = styled.span`
+  padding: 0rem 1.5rem;
+  color: var(--control-icons);
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+
+  &:active {
+    color: var(--button-secondary-active);
+  }
+`;
 
 const ExitModal = () => {
+  const handleClick = () => {
+    console.log('exit');
+  };
+
   return (
-    <span className='material-icons-outlined' style={style}>
+    <Icon className='material-icons-outlined' onClick={handleClick}>
       last_page
-    </span>
+    </Icon>
   );
 };
 

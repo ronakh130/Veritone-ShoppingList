@@ -11,10 +11,14 @@ const ButtonWrapper = styled.div`
 `;
 
 const ConfirmButtons = () => {
+  const addHandleClick = () => {
+    console.log('add item');
+  }
+
   return (
     <ButtonWrapper>
       <CancelButton />
-      <Button buttonText={'Add Item'}/>
+      <Button clickFunc={addHandleClick} buttonText={'Add Item'}/>
     </ButtonWrapper>
   )
 }
