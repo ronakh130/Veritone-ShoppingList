@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../redux/listSlice';
 import Button from './Button';
-import { openAddModal } from '../modals/AddItemModal';
+import { openAddModal } from '../redux/modalSlice';
 
 const EmptyContainer = styled.div`
   margin-top: -10%;
@@ -27,11 +27,10 @@ const EmptyMessage = styled.p`
 
 const EmptyList = () => {
   const dispatch = useDispatch();
-  const addModalOpen = useSelector((state) => state.list.addModalOpen);
 
   function addItemClick() {
-    // dispatch(openAddModal());
-    console.log(addModalOpen);
+    dispatch(openAddModal());
+
     //temporarily add to list
     dispatch(
       addItem({

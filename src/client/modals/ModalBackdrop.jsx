@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import AddItemModal from './AddItemModal';
 
 const GrayWrapper = styled.div`
   position: absolute;
@@ -9,12 +10,16 @@ const GrayWrapper = styled.div`
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ModalBackdrop = () => {
+
   return (
     <GrayWrapper>
-      
+      <AddItemModal />
     </GrayWrapper>
   )
 }

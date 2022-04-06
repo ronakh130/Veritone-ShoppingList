@@ -15,7 +15,7 @@ const AppContainer = styled.div`
 `;
 
 const App = () => {
-  const modalOpen = useSelector(state => state.modals.anyModalOpen);
+  const modalOpen = useSelector(state => state.modals.modalOpen);
 
   return (
     <AppContainer>
