@@ -4,6 +4,8 @@ import ModalHeader from './ModalHeader';
 import Title from './ModalText/Title';
 import Subtitle from './ModalText/Subtitle';
 import ItemName from './InputFields/ItemName';
+import ItemDesc from './InputFields/ItemDesc';
+import ItemNumber from './InputFields/ItemNumber';
 
 const AddModal = styled.div`
   width: 30rem;
@@ -27,6 +29,9 @@ const AddItemModal = () => {
         <Title text={'Add an Item'} />
         <Subtitle text={'Add your new item below'} />
         <ItemName text={'Item Name'} />
+        <ItemDesc text={'Description'} />
+        <ItemNumber text={'How many?'} />
+        
       </BodyWrapper>
     </AddModal>
   )
