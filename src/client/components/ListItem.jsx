@@ -44,10 +44,11 @@ const ItemDesc = styled.p`
 
 const ListItem = (props) => {
   const { name, desc, isChecked } = props.item;
+  const ind = props.ind;
 
   return (
     <ItemWrapper>
-      <Checkbox isChecked={isChecked} />
+      <Checkbox isChecked={isChecked} ind={ind} />
       <Textbox>
         <ItemName>{name}</ItemName>
         <ItemDesc>{desc}</ItemDesc>

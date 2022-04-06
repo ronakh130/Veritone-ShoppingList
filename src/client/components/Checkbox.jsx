@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useDispatch } from 'react-redux';
+import { crossItem } from '../redux/listSlice';
 
 const CheckboxContainer = styled.div`
   flex: 0 0 10%;
@@ -14,12 +16,18 @@ const CheckboxInput = styled.input`
   cursor: pointer;
 `;
 
-const Checkbox = ({isChecked}) => {
+const Checkbox = ({ isChecked, ind }) => {
+  const dispatch = useDispatch();
+
+  const handleCheckClick = () => {
+    dispatch(crossItem(ind));
+  };
+
   return (
     <CheckboxContainer>
-      <CheckboxInput type='checkbox' checked={isChecked} />
+      <CheckboxInput type='checkbox' checked={isChecked} onClick={handleCheckClick} />
     </CheckboxContainer>
   );
-}
+};
 
-export default Checkbox
+export default Checkbox;

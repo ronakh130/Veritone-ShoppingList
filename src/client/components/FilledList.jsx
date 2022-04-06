@@ -30,7 +30,7 @@ const FilledList = ({shoppingList}) => {
         <ListTitle>Your Items</ListTitle>
         <Button buttonText={'Add Item'}/>
       </ListHeader>
-      {shoppingList.map((ele, ind) => <ListItem item={ele} key={ind}/>)}
+      {shoppingList.map((ele, ind) => <ListItem item={ele} ind={ind} key={ind}/>)}
     </ListWrapper>
   )
 }
