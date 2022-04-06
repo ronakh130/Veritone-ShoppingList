@@ -15,7 +15,7 @@ const BodyContainer = styled.div`
 const Body = () => {
   const shoppingList = useSelector(state => state.list.shoppingList);
 
-  const Cart = shoppingList.length 
+  const Cart = !shoppingList.length 
     ? <FilledList shoppingList={shoppingList}/> 
     : <EmptyList />;
 

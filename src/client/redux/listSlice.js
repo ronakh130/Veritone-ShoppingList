@@ -26,9 +26,6 @@ export const listSlice = createSlice({
     removeItem: (state, action) => {
 
     },
-    openAddModal: (state) => {
-      state.addModalOpen = !state.addModalOpen;
-    },
     crossItem: (state, action) => {
       const item = state.shoppingList[action.payload];
       item.isChecked = !item.isChecked;
@@ -36,6 +33,6 @@ export const listSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem, openAddModal, crossItem } = listSlice.actions;
+export const { addItem, removeItem, crossItem } = listSlice.actions;
 
 export default listSlice.reducer;
