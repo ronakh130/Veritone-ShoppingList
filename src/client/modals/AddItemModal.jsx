@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import ModalHeader from './ModalHeader';
 import Title from './ModalText/Title';
 import Subtitle from './ModalText/Subtitle';
+import ItemName from './InputFields/ItemName';
 
 const AddModal = styled.div`
   width: 30rem;
@@ -25,7 +26,7 @@ const AddItemModal = () => {
       <BodyWrapper>
         <Title text={'Add an Item'} />
         <Subtitle text={'Add your new item below'} />
-        
+        <ItemName text={'Item Name'} />
       </BodyWrapper>
     </AddModal>
   )
