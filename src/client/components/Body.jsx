@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { openAddModal } from '../redux/listSlice';
+import { useSelector } from 'react-redux';
 import EmptyList from './EmptyList';
 import FilledList from './FilledList';
 
