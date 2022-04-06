@@ -7,17 +7,17 @@ const ButtonWrapper = styled.button`
   color: white;
   border: none;
   border-radius: 0.2rem;
-  transition: 200ms;
+  transition: 100ms;
 
   &:hover {
     cursor: pointer;
     background-color: var(--button-primary-hover);
-    transition: 200ms;
+    transition: 100ms;
   }
 
   &:active {
     background-color: var(--button-primary-active);
-    transition: 200ms;
+    transition: 100ms;
   }
 `;
 

@@ -7,17 +7,17 @@ const Cancel = styled.button`
   background-color: transparent;
   border: none;
   border-radius: 0.2rem;
-  transition: 200ms;
+  transition: 100ms;
 
   &:hover {
     cursor: pointer;
     background-color: var(--button-secondary-hover);
-    transition: 200ms;
+    transition: 100ms;
   }
 
   &:active {
     background-color: var(--button-secondary-active);
-    transition: 200ms;
+    transition: 100ms;
   }
 `;
 
