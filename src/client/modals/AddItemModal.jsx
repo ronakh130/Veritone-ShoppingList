@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from '@emotion/styled';
+import { useDispatch } from 'react-redux';
+
 import ModalHeader from './ModalHeader';
 import Title from './ModalText/Title';
 import Subtitle from './ModalText/Subtitle';
@@ -7,6 +9,9 @@ import ItemName from './InputFields/ItemName';
 import ItemDesc from './InputFields/ItemDesc';
 import ItemNumber from './InputFields/ItemNumber';
 import ConfirmButtons from './ConfirmButtons';
+
+import { addItem } from '../redux/listSlice';
+import { closeModal } from '../redux/modalSlice';
 
 const AddModal = styled.div`
   width: 30rem;
@@ -24,19 +29,44 @@ const BodyWrapper = styled.div`
 `;
 
 const AddItemModal = () => {
+  const dispatch = useDispatch();
+
+  const inputForm = useRef();
+
+  const clickFunc = (event) => {
+    event.preventDefault();
+    console.log('add item');
+    const name = inputForm.current[0].value;
+    const desc = inputForm.current[1].value;
+    const num = inputForm.current[2].value;
+    
+    if(name.length < 1){
+      alert('Please enter name of item');
+    }else if(desc.length < 1){
+      alert('Please enter description of item');
+    }else if(num.length > 5){
+      alert('Please enter quantity of items to add');
+    }else{
+      dispatch(addItem({name, desc, num}));
+      dispatch(closeModal());
+    }
+  };
+
   return (
     <AddModal>
-      <ModalHeader modal={'add'}/>
+      <ModalHeader modal={'add'} />
       <BodyWrapper>
         <Title text={'Add an Item'} />
         <Subtitle text={'Add your new item below'} />
-        <ItemName text={'Item Name'} />
-        <ItemDesc text={'Description'} />
-        <ItemNumber text={'How many?'} />
+        <form ref={inputForm}>
+          <ItemName text={'Item Name'} />
+          <ItemDesc text={'Description'} />
+          <ItemNumber text={'How many?'} />
+        </form>
       </BodyWrapper>
-      <ConfirmButtons modal={'add'}/>
+      <ConfirmButtons modal={'add'} addHandleClick={clickFunc} />
     </AddModal>
-  )
-}
+  );
+};
 
-export default AddItemModal
+export default AddItemModal;

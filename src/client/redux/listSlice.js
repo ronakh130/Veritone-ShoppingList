@@ -1,18 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  shoppingList: [
-    {
-      name: 'Tomatoes',
-      desc: 'Red',
-      isChecked: true,
-    },
-    {
-      name: 'Potatoes',
-      desc: 'Blue',
-      isChecked: false,
-    },
-  ],
+  shoppingList: [],
   addModalOpen: false,
 };
 
@@ -21,7 +10,12 @@ export const listSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      state.shoppingList.push(action.payload);
+      const {name, desc, num} = action.payload;
+      let counter = num;
+      while(counter > 0){
+        state.shoppingList.push({name, desc, isChecked: false});
+        counter--; //num free to mutate here since it gets cleared after submit
+      }
     },
     removeItem: (state, action) => {
 

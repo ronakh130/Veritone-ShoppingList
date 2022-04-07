@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
+
 import Button from '../components/Button';
 import CancelButton from '../components/CancelButton';
-import { useDispatch } from 'react-redux';
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -11,14 +11,7 @@ const ButtonWrapper = styled.div`
   margin: 1rem 2rem;
 `;
 
-const ConfirmButtons = ({ modal }) => {
-  const dispatch = useDispatch();
-
-  const addHandleClick = (event) => {
-    event.preventDefault();
-    console.log('add item');
-  };
-
+const ConfirmButtons = ({ modal, addHandleClick }) => {
   return (
     <ButtonWrapper>
       <CancelButton modal={modal} />
