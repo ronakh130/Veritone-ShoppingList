@@ -42,8 +42,6 @@ const AddItemModal = () => {
     
     if(name.length < 1){
       alert('Please enter name of item');
-    }else if(desc.length < 1){
-      alert('Please enter description of item');
     }else if(num.length > 5){
       alert('Please enter quantity of items to add');
     }else{

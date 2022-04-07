@@ -4,6 +4,7 @@ import ListItem from './ListItem';
 import Button from './Button';
 import { useDispatch } from 'react-redux';
 import { openAddModal } from '../redux/modalSlice';
+import CrossedItem from './CrossedItem';
 
 const ListWrapper = styled.div`
   align-self: flex-start;
@@ -37,7 +38,13 @@ const FilledList = ({shoppingList}) => {
         <ListTitle>Your Items</ListTitle>
         <Button buttonText={'Add Item'} clickFunc={addItemClick} />
       </ListHeader>
-      {shoppingList.map((ele, ind) => <ListItem item={ele} ind={ind} key={ind}/>)}
+      {shoppingList.map((ele, ind) => {
+        return(
+          ele.isChecked
+          ? <CrossedItem item={ele} ind={ind} key={ind}/>
+          : <ListItem item={ele} ind={ind} key={ind}/>
+        )
+      })}
     </ListWrapper>
   )
 }
