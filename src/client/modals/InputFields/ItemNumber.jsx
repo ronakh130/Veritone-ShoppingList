@@ -13,8 +13,8 @@ const Dropdown = styled.select`
 
 const ItemNumber = ({ text }) => {
   return (
-    <Dropdown>
-      <option selected disabled hidden>{text}</option>
+    <Dropdown defaultValue={text}>
+      <option disabled hidden>{text}</option>
       <option>1</option>
       <option>2</option>
       <option>3</option>

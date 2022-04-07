@@ -8,11 +8,19 @@ const ControlIcons = styled.div`
   align-items: center;
 
   div {
+    cursor: pointer;
     color: var(--control-icons);
+    transition: 100ms;
   }
 
   div:hover {
-    cursor: pointer;
+    color: black;
+    transition: 100ms;
+  }
+
+  div:active {
+    color: var(--button-secondary-active);
+    transition: 100ms;
   }
 `;
 
