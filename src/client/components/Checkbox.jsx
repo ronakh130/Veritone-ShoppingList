@@ -25,7 +25,7 @@ const Checkbox = ({ isChecked, ind }) => {
 
   return (
     <CheckboxContainer>
-      <CheckboxInput type='checkbox' checked={isChecked} onClick={handleCheckClick} />
+      <CheckboxInput type='checkbox' defaultChecked={isChecked} onClick={handleCheckClick} />
     </CheckboxContainer>
   );
 };

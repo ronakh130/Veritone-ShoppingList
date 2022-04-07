@@ -30,15 +30,6 @@ const EmptyList = () => {
 
   function addItemClick() {
     dispatch(openAddModal());
-
-    //temporarily add to list
-    dispatch(
-      addItem({
-        name: 'test',
-        desc: 'desc',
-        isChecked: false,
-      })
-    );
   }
 
   return (
