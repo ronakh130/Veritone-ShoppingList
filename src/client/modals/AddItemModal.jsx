@@ -28,6 +28,10 @@ const BodyWrapper = styled.div`
   flex: 1 1 80%;
 `;
 
+const FormWrapper = styled.form`
+  height: 100%;
+`;
+
 const AddItemModal = () => {
   const dispatch = useDispatch();
 
@@ -46,7 +50,7 @@ const AddItemModal = () => {
       alert('Please enter quantity of items to add');
     }else{
       dispatch(addItem({name, desc, num}));
-      dispatch(closeModal());
+      dispatch(closeModal('add'));
     }
   };
 
@@ -56,11 +60,11 @@ const AddItemModal = () => {
       <BodyWrapper>
         <Title text={'Add an Item'} />
         <Subtitle text={'Add your new item below'} />
-        <form ref={inputForm}>
-          <ItemName text={'Item Name'} />
-          <ItemDesc text={'Description'} />
-          <ItemNumber text={'How many?'} />
-        </form>
+        <FormWrapper ref={inputForm}>
+          <ItemName placeholder={'Item Name'} />
+          <ItemDesc placeholder={'Description'} />
+          <ItemNumber placeholder={'How many?'} />
+        </FormWrapper>
       </BodyWrapper>
       <ConfirmButtons modal={'add'} addHandleClick={clickFunc} />
     </AddModal>

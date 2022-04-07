@@ -16,8 +16,12 @@ const InputDesc = styled.textarea`
   }
 `;
 
-const ItemDesc = ({ text }) => {
-  return <InputDesc placeholder={text} />;
+const ItemDesc = ({ placeholder, text }) => {
+  return(
+    placeholder 
+    ? <InputDesc placeholder={placeholder} />
+    : <InputDesc text={text} />
+  ) 
 };
 
 export default ItemDesc;
