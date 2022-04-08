@@ -11,6 +11,7 @@ import ItemNumber from './InputFields/ItemNumber';
 import ConfirmButtons from './ConfirmButtons';
 
 import { closeModal } from '../redux/modalSlice';
+import { updateItem } from '../redux/listSlice';
 
 const EditModal = styled.div`
   width: 30rem;
@@ -56,6 +57,7 @@ const EditItemModal = () => {
   const itemDesc = useSelector((state) => state.modals.desc);
   const itemNum = useSelector((state) => state.modals.num);
   const itemCheck = useSelector((state) => state.modals.isChecked);
+  const ind = useSelector((state) => state.modals.ind);
 
   const inputForm = useRef();
 
@@ -65,13 +67,14 @@ const EditItemModal = () => {
     const name = inputForm.current[0].value;
     const desc = inputForm.current[1].value;
     const num = inputForm.current[2].value;
+    const isChecked = inputForm.current[3].checked;
 
     if (name.length < 1) {
       alert('Please enter name of item');
     } else if (num.length > 5) {
       alert('Please enter quantity of items to add');
     } else {
-      // dispatch(addItem({ name, desc, num }));
+      dispatch(updateItem({ind, name, desc, isChecked}))
       dispatch(closeModal('edit'));
     }
   };
@@ -87,7 +90,7 @@ const EditItemModal = () => {
           <ItemDesc text={itemDesc} />
           <ItemNumber text={itemNum} />
           <TextWrapper>
-            <SubmittedBox type='checkbox' />
+            <SubmittedBox type='checkbox' defaultChecked={itemCheck}/>
             <PurchasedText>Purchased</PurchasedText>
           </TextWrapper>
         </FormWrapper>

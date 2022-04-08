@@ -25,10 +25,16 @@ export const listSlice = createSlice({
     crossItem: (state, action) => {
       const item = state.shoppingList[action.payload];
       item.isChecked = !item.isChecked;
+    },
+    updateItem: (state, action) => {
+      const {ind, name, desc, isChecked} = action.payload;
+      state.shoppingList[ind].name = name;
+      state.shoppingList[ind].desc = desc;
+      state.shoppingList[ind].isChecked = isChecked;
     }
   },
 });
 
-export const { addItem, removeItem, crossItem } = listSlice.actions;
+export const { addItem, removeItem, crossItem, updateItem } = listSlice.actions;
 
 export default listSlice.reducer;
