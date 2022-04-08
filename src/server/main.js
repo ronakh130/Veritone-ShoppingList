@@ -13,7 +13,6 @@ app.use(express.static(path.resolve(__dirname, '../client')));
 
 //test route
 app.use('/test', (req, res) => {
-  console.log('test hit');
   res.sendStatus(200);
 });
 

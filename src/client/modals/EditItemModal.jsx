@@ -2,6 +2,9 @@ import React, { useRef } from 'react';
 import styled from '@emotion/styled';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { closeModal } from '../redux/modalSlice';
+import { updateItem } from '../redux/listSlice';
+
 import ModalHeader from './ModalHeader';
 import Title from './ModalText/Title';
 import Subtitle from './ModalText/Subtitle';
@@ -9,9 +12,6 @@ import ItemName from './InputFields/ItemName';
 import ItemDesc from './InputFields/ItemDesc';
 import ItemNumber from './InputFields/ItemNumber';
 import ConfirmButtons from './ConfirmButtons';
-
-import { closeModal } from '../redux/modalSlice';
-import { updateItem } from '../redux/listSlice';
 
 const EditModal = styled.div`
   width: 30rem;
@@ -42,13 +42,13 @@ const SubmittedBox = styled.input`
 const TextWrapper = styled.span`
   display: flex;
   align-items: center;
-`
+`;
 
 const PurchasedText = styled.label`
   color: var(--modal-placeholders);
   font-family: 'Nunito', sans-serif;
   vertical-align: middle;
-`
+`;
 
 const EditItemModal = () => {
   const dispatch = useDispatch();
@@ -74,7 +74,7 @@ const EditItemModal = () => {
     } else if (count.length > 5) {
       alert('Please enter quantity of items to add');
     } else {
-      dispatch(updateItem({ind, name, desc, isChecked, count}))
+      dispatch(updateItem({ ind, name, desc, isChecked, count }));
       dispatch(closeModal('edit'));
     }
   };
@@ -90,12 +90,12 @@ const EditItemModal = () => {
           <ItemDesc text={itemDesc} />
           <ItemNumber text={itemNum} />
           <TextWrapper>
-            <SubmittedBox type='checkbox' defaultChecked={itemCheck}/>
+            <SubmittedBox type='checkbox' defaultChecked={itemCheck} />
             <PurchasedText>Purchased</PurchasedText>
           </TextWrapper>
         </FormWrapper>
       </BodyWrapper>
-      <ConfirmButtons modal={'edit'} handleClick={clickFunc} buttonText={'Save Item'}/>
+      <ConfirmButtons modal={'edit'} handleClick={clickFunc} buttonText={'Save Item'} />
     </EditModal>
   );
 };

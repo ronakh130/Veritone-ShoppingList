@@ -1,23 +1,25 @@
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
   height: 100%;
 
   --header: #4d81b7;
-  --modal-header: #FAFAFA;
+  --modal-header: #fafafa;
   --menu-border: #87898c;
 
-  --modal-subtitle: #5C6269;
+  --modal-subtitle: #5c6269;
   --modal-inputs: #d5dfe9;
-  --modal-placeholders: #9CA8B4;
+  --modal-placeholders: #9ca8b4;
 
-  --checkbox-border: #C6C6C6;
-  --checkbox-filled: #4D81B7;
-  
-  --item-border: #D5DFE9;
-  --item-desc: #7D7A7A;
+  --checkbox-border: #c6c6c6;
+  --checkbox-filled: #4d81b7;
 
-  --control-icons: #555F7C;
+  --item-border: #d5dfe9;
+  --item-desc: #7d7a7a;
+
+  --control-icons: #555f7c;
 
   --button-primary: #1871e8;
   --button-primary-hover: #1265d0;

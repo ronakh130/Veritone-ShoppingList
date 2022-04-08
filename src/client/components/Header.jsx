@@ -12,11 +12,7 @@ const HeaderBar = styled.div`
 `;
 
 const Header = () => {
-  return (
-    <HeaderBar>
-      SHOPPING LIST
-    </HeaderBar>
-  )
-}
+  return <HeaderBar>SHOPPING LIST</HeaderBar>;
+};
 
 export default Header;

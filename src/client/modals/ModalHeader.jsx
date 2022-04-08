@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+
 import ExitModal from './ExitModal';
 
 const ModalHeaderWrapper = styled.div`
@@ -18,11 +19,11 @@ const ModalTitle = styled.div`
   padding: 0rem 1.5rem;
 `;
 
-const ModalHeader = ({modal}) => {
+const ModalHeader = ({ modal }) => {
   return (
     <ModalHeaderWrapper>
       <ModalTitle>SHOPPING LIST</ModalTitle>
-      <ExitModal modal={modal}/>
+      <ExitModal modal={modal} />
     </ModalHeaderWrapper>
   );
 };

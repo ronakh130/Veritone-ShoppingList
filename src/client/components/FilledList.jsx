@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useDispatch } from 'react-redux';
+
+import { openAddModal } from '../redux/modalSlice';
+
 import ListItem from './ListItem';
 import Button from './Button';
-import { useDispatch } from 'react-redux';
-import { openAddModal } from '../redux/modalSlice';
 import CrossedItem from './CrossedItem';
 
 const ListWrapper = styled.div`

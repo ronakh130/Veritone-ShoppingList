@@ -1,4 +1,4 @@
-import React from 'react';  
+import React from 'react';
 import styled from '@emotion/styled';
 
 const SubtitleText = styled.p`
@@ -9,10 +9,8 @@ const SubtitleText = styled.p`
   color: var(--modal-subtitle);
 `;
 
-const Subtitle = ({text}) => {
-  return (
-    <SubtitleText>{text}</SubtitleText>
-  )
-}
+const Subtitle = ({ text }) => {
+  return <SubtitleText>{text}</SubtitleText>;
+};
 
 export default Subtitle;

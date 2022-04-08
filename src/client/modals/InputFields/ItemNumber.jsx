@@ -15,7 +15,7 @@ const options = [];
 const numOptions = 5;
 let count = 0;
 
-while(count < numOptions){
+while (count < numOptions) {
   options.push(<option>{++count}</option>);
 }
 
@@ -28,9 +28,7 @@ const ItemNumber = ({ placeholder, text }) => {
       {options}
     </Dropdown>
   ) : (
-    <Dropdown defaultValue={text}>
-      {options}
-    </Dropdown>
+    <Dropdown defaultValue={text}>{options}</Dropdown>
   );
 };
 

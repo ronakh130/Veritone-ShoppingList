@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { useDispatch } from 'react-redux';
+
 import { closeModal } from '../redux/modalSlice';
 
 const Cancel = styled.button`
@@ -28,7 +29,6 @@ const CancelButton = ({ modal }) => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    console.log('cancel');
     dispatch(closeModal(modal));
   };
 

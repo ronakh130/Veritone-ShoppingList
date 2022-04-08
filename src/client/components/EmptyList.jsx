@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from '../redux/listSlice';
-import Button from './Button';
+import { useDispatch } from 'react-redux';
+
 import { openAddModal } from '../redux/modalSlice';
+
+import Button from './Button';
 
 const EmptyContainer = styled.div`
   margin-top: -10%;
@@ -35,7 +36,7 @@ const EmptyList = () => {
   return (
     <EmptyContainer>
       <EmptyMessage>Your shopping list is empty :(</EmptyMessage>
-      <Button buttonText={'Add your first item'} clickFunc={addItemClick}/>
+      <Button buttonText={'Add your first item'} clickFunc={addItemClick} />
     </EmptyContainer>
   );
 };

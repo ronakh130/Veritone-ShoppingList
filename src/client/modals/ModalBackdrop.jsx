@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import AddItemModal from './AddItemModal';
 import { useSelector } from 'react-redux';
+
+import AddItemModal from './AddItemModal';
 import EditItemModal from './EditItemModal';
 import DeleteItemModal from './DeleteItemModal';
 

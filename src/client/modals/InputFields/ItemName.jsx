@@ -15,11 +15,7 @@ const NameInput = styled.input`
 `;
 
 const ItemName = ({ placeholder, text }) => {
-  return (
-    placeholder 
-    ? <NameInput placeholder={placeholder} />
-    : <NameInput defaultValue={text} />
-  )
+  return placeholder ? <NameInput placeholder={placeholder} /> : <NameInput defaultValue={text} />;
 };
 
 export default ItemName;

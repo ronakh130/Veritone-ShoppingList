@@ -33,13 +33,13 @@ export const modalSlice = createSlice({
       state.modalOpen = false;
     },
     setItem: (state, action) => {
-      const {name, desc, isChecked, count, ind} = action.payload;
+      const { name, desc, isChecked, count, ind } = action.payload;
       state.name = name;
       state.desc = desc;
       state.isChecked = isChecked;
       state.num = count;
       state.ind = ind;
-    }
+    },
   },
 });
 

@@ -11,15 +11,14 @@ export const listSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      const {name, desc, num} = action.payload;
+      const { name, desc, num } = action.payload;
       let counter = num;
-      while(counter > 0){
-        state.shoppingList.push({name, desc, isChecked: false, num: 1});
+      while (counter > 0) {
+        state.shoppingList.push({ name, desc, isChecked: false, num: 1 });
         counter--;
       }
     },
     removeItem: (state, action) => {
-      console.log('payload: ', action.payload);
       state.shoppingList.splice(action.payload, 1);
     },
     crossItem: (state, action) => {
@@ -27,12 +26,12 @@ export const listSlice = createSlice({
       item.isChecked = !item.isChecked;
     },
     updateItem: (state, action) => {
-      const {ind, name, desc, isChecked, count} = action.payload;
+      const { ind, name, desc, isChecked, count } = action.payload;
       state.shoppingList[ind].name = name;
       state.shoppingList[ind].desc = desc;
       state.shoppingList[ind].isChecked = isChecked;
       state.shoppingList[ind].count = count;
-    }
+    },
   },
 });
 
