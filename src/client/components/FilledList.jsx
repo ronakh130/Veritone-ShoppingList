@@ -18,19 +18,18 @@ const ListHeader = styled.div`
   align-items: center;
   height: 3rem;
   margin-bottom: -1rem;
-`
+`;
 const ListTitle = styled.h4`
   font-family: 'Nunito', sans-serif;
   font-size: 1.2rem;
-`
+`;
 
-
-const FilledList = ({shoppingList}) => {
+const FilledList = ({ shoppingList }) => {
   const dispatch = useDispatch();
 
-  function addItemClick() {
+  const addItemClick = () => {
     dispatch(openAddModal());
-  }
+  };
 
   return (
     <ListWrapper>
@@ -39,14 +38,10 @@ const FilledList = ({shoppingList}) => {
         <Button buttonText={'Add Item'} clickFunc={addItemClick} />
       </ListHeader>
       {shoppingList.map((ele, ind) => {
-        return(
-          ele.isChecked
-          ? <CrossedItem item={ele} ind={ind} key={ind}/>
-          : <ListItem item={ele} ind={ind} key={ind}/>
-        )
+        return ele.isChecked ? <CrossedItem item={ele} ind={ind} key={ind} /> : <ListItem item={ele} ind={ind} key={ind} />;
       })}
     </ListWrapper>
-  )
-}
+  );
+};
 
-export default FilledList
+export default FilledList;

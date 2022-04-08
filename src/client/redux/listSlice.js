@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   shoppingList: [],
+  itemCount: {},
   addModalOpen: false,
 };
 
@@ -14,11 +15,12 @@ export const listSlice = createSlice({
       let counter = num;
       while(counter > 0){
         state.shoppingList.push({name, desc, isChecked: false});
-        counter--; //num free to mutate here since it gets cleared after submit
+        counter--;
       }
     },
     removeItem: (state, action) => {
-
+      console.log('payload: ', action.payload);
+      state.shoppingList.splice(action.payload, 1);
     },
     crossItem: (state, action) => {
       const item = state.shoppingList[action.payload];

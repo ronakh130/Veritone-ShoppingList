@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useDispatch } from 'react-redux';
+import { openDeleteModal, openEditModal, setItem } from '../redux/modalSlice';
 
 const ControlIcons = styled.div`
   flex: 0 1 15%;
@@ -24,11 +26,23 @@ const ControlIcons = styled.div`
   }
 `;
 
-const Controls = () => {
+const Controls = ({ele}) => {
+  const dispatch = useDispatch();
+
+  const clickEdit = () => {
+    dispatch(setItem(ele));
+    dispatch(openEditModal());
+  }
+
+  const clickDelete = () => {
+    dispatch(setItem(ele));
+    dispatch(openDeleteModal());
+  }
+
   return (
     <ControlIcons>
-      <div className='material-icons-outlined'>edit</div>
-      <div className='material-icons-outlined'>delete</div>
+      <div className='material-icons-outlined' onClick={clickEdit}>edit</div>
+      <div className='material-icons-outlined' onClick={clickDelete}>delete</div>
     </ControlIcons>
   );
 }

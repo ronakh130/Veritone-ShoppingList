@@ -3,6 +3,9 @@ import styled from '@emotion/styled';
 import Title from './ModalText/Title';
 import Subtitle from './ModalText/Subtitle';
 import ConfirmButtons from './ConfirmButtons';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeItem } from '../redux/listSlice';
+import { closeModal } from '../redux/modalSlice';
 
 const DeleteModal = styled.div`
   width: 25rem;
@@ -20,13 +23,22 @@ const TextWrapper = styled.div`
 `
 
 const DeleteItemModal = () => {
+  const dispatch = useDispatch();
+
+  const ind = useSelector(state => state.modals.ind);
+
+  const clickFunc = () => {
+    dispatch(removeItem(ind));
+    dispatch(closeModal('del'));
+  }
+
   return (
     <DeleteModal>
       <TextWrapper>
         <Title text='Delete Item?' />
         <Subtitle text='Are you sure you want to delete this item? This can not be undone.' />
       </TextWrapper>
-      <ConfirmButtons modal={'del'}/>
+      <ConfirmButtons modal={'del'} handleClick={clickFunc} buttonText={'Delete'}/>
     </DeleteModal>
   )
 }

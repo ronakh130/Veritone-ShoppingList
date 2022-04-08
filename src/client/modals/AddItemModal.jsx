@@ -66,7 +66,7 @@ const AddItemModal = () => {
           <ItemNumber placeholder={'How many?'} />
         </FormWrapper>
       </BodyWrapper>
-      <ConfirmButtons modal={'add'} addHandleClick={clickFunc} />
+      <ConfirmButtons modal={'add'} handleClick={clickFunc} buttonText={'Add Item'} />
     </AddModal>
   );
 };

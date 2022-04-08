@@ -11,11 +11,11 @@ const ButtonWrapper = styled.div`
   margin: 1rem 2rem;
 `;
 
-const ConfirmButtons = ({ modal, addHandleClick }) => {
+const ConfirmButtons = ({ modal, handleClick, buttonText }) => {
   return (
     <ButtonWrapper>
       <CancelButton modal={modal} />
-      <Button clickFunc={addHandleClick} buttonText={'Add Item'} />
+      <Button clickFunc={handleClick} buttonText={buttonText} />
     </ButtonWrapper>
   );
 };

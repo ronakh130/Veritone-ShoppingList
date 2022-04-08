@@ -92,7 +92,7 @@ const EditItemModal = () => {
           </TextWrapper>
         </FormWrapper>
       </BodyWrapper>
-      <ConfirmButtons modal={'edit'} addHandleClick={clickFunc} />
+      <ConfirmButtons modal={'edit'} handleClick={clickFunc} buttonText={'Save Item'}/>
     </EditModal>
   );
 };

@@ -4,7 +4,12 @@ const initialState = {
   modalOpen: false,
   add: false,
   edit: false,
-  delete: false,
+  del: false,
+  name: '',
+  desc: '',
+  num: 1,
+  ind: 0,
+  isChecked: false,
 };
 
 export const modalSlice = createSlice({
@@ -20,16 +25,23 @@ export const modalSlice = createSlice({
       state.modalOpen = true;
     },
     openDeleteModal: (state) => {
-      state.delete = true;
+      state.del = true;
       state.modalOpen = true;
     },
     closeModal: (state, action) => {
       state[action.payload] = false;
       state.modalOpen = false;
     },
+    setItem: (state, action) => {
+      const {name, desc, isChecked, ind} = action.payload;
+      state.name = name;
+      state.desc = desc;
+      state.isChecked = isChecked;
+      state.ind = ind;
+    }
   },
 });
 
-export const { openAddModal, openEditModal, openDeleteModal, closeModal } = modalSlice.actions;
+export const { openAddModal, openEditModal, openDeleteModal, closeModal, setItem } = modalSlice.actions;
 
 export default modalSlice.reducer;

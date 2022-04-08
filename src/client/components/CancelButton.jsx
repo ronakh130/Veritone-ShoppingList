@@ -29,7 +29,7 @@ const CancelButton = ({ modal }) => {
   const handleClick = (event) => {
     event.preventDefault();
     console.log('cancel');
-    dispatch(closeModal({ modal }));
+    dispatch(closeModal(modal));
   };
 
   return <Cancel onClick={handleClick}>Cancel</Cancel>;

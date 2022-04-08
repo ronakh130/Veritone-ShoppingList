@@ -53,7 +53,7 @@ const ListItem = (props) => {
         <ItemName>{name}</ItemName>
         <ItemDesc>{desc}</ItemDesc>
       </Textbox>
-      <Controls />
+      <Controls ele={{name, desc, isChecked, ind}} ind={ind} />
     </ItemWrapper>
   );
 };
