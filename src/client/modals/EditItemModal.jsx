@@ -66,15 +66,15 @@ const EditItemModal = () => {
     console.log('edit item');
     const name = inputForm.current[0].value;
     const desc = inputForm.current[1].value;
-    const num = inputForm.current[2].value;
+    const count = inputForm.current[2].value;
     const isChecked = inputForm.current[3].checked;
 
     if (name.length < 1) {
       alert('Please enter name of item');
-    } else if (num.length > 5) {
+    } else if (count.length > 5) {
       alert('Please enter quantity of items to add');
     } else {
-      dispatch(updateItem({ind, name, desc, isChecked}))
+      dispatch(updateItem({ind, name, desc, isChecked, count}))
       dispatch(closeModal('edit'));
     }
   };

@@ -14,7 +14,7 @@ export const listSlice = createSlice({
       const {name, desc, num} = action.payload;
       let counter = num;
       while(counter > 0){
-        state.shoppingList.push({name, desc, isChecked: false});
+        state.shoppingList.push({name, desc, isChecked: false, num: 1});
         counter--;
       }
     },
@@ -27,10 +27,11 @@ export const listSlice = createSlice({
       item.isChecked = !item.isChecked;
     },
     updateItem: (state, action) => {
-      const {ind, name, desc, isChecked} = action.payload;
+      const {ind, name, desc, isChecked, count} = action.payload;
       state.shoppingList[ind].name = name;
       state.shoppingList[ind].desc = desc;
       state.shoppingList[ind].isChecked = isChecked;
+      state.shoppingList[ind].count = count;
     }
   },
 });
