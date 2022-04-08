@@ -20,7 +20,7 @@ const ItemDesc = ({ placeholder, text }) => {
   return(
     placeholder 
     ? <InputDesc placeholder={placeholder} />
-    : <InputDesc text={text} />
+    : <InputDesc defaultValue={text} />
   ) 
 };
 

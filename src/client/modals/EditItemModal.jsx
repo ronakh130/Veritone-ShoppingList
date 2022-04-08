@@ -10,14 +10,13 @@ import ItemDesc from './InputFields/ItemDesc';
 import ItemNumber from './InputFields/ItemNumber';
 import ConfirmButtons from './ConfirmButtons';
 
-import { addItem } from '../redux/listSlice';
 import { closeModal } from '../redux/modalSlice';
 
 const EditModal = styled.div`
   width: 30rem;
   height: 40rem;
   background-color: white;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
   border-bottom: 0.5rem solid var(--checkbox-filled);
   display: flex;
   flex-direction: column;
@@ -32,13 +31,31 @@ const FormWrapper = styled.form`
   height: 100%;
 `;
 
+const SubmittedBox = styled.input`
+  margin: 1.5rem 1.5rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  cursor: pointer;
+`;
+
+const TextWrapper = styled.span`
+  display: flex;
+  align-items: center;
+`
+
+const PurchasedText = styled.label`
+  color: var(--modal-placeholders);
+  font-family: 'Nunito', sans-serif;
+  vertical-align: middle;
+`
+
 const EditItemModal = () => {
   const dispatch = useDispatch();
 
-  const itemName = useSelector(state => state.modals.name);
-  const itemDesc = useSelector(state => state.modals.desc);
-  const itemNum = useSelector(state => state.modals.num);
-  const itemCheck = useSelector(state => state.modals.isChecked);
+  const itemName = useSelector((state) => state.modals.name);
+  const itemDesc = useSelector((state) => state.modals.desc);
+  const itemNum = useSelector((state) => state.modals.num);
+  const itemCheck = useSelector((state) => state.modals.isChecked);
 
   const inputForm = useRef();
 
@@ -69,6 +86,10 @@ const EditItemModal = () => {
           <ItemName text={itemName} />
           <ItemDesc text={itemDesc} />
           <ItemNumber text={itemNum} />
+          <TextWrapper>
+            <SubmittedBox type='checkbox' />
+            <PurchasedText>Purchased</PurchasedText>
+          </TextWrapper>
         </FormWrapper>
       </BodyWrapper>
       <ConfirmButtons modal={'edit'} addHandleClick={clickFunc} />

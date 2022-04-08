@@ -17,7 +17,7 @@ const AddModal = styled.div`
   width: 30rem;
   height: 40rem;
   background-color: white;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
   border-bottom: 0.5rem solid var(--checkbox-filled);
   display: flex;
   flex-direction: column;

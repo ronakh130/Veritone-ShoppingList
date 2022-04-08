@@ -26,7 +26,7 @@ const ExitModal = ({ modal }) => {
   const handleClick = (event) => {
     event.preventDefault();
     console.log('exit');
-    dispatch(closeModal({ modal }));
+    dispatch(closeModal(modal));
   };
 
   return (

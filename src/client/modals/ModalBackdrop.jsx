@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import AddItemModal from './AddItemModal';
+import { useSelector } from 'react-redux';
+import EditItemModal from './EditItemModal';
 
 const GrayWrapper = styled.div`
   position: absolute;
@@ -16,10 +18,14 @@ const GrayWrapper = styled.div`
 `;
 
 const ModalBackdrop = () => {
+  const add = useSelector(state => state.modals.add);
+  const edit = useSelector(state => state.modals.edit);
+  const del = useSelector(state => state.modals.delete);
 
   return (
     <GrayWrapper>
-      <AddItemModal />
+      {add && <AddItemModal />}
+      {edit && <EditItemModal />}
     </GrayWrapper>
   )
 }
