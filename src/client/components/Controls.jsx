@@ -30,7 +30,6 @@ const Controls = ({ele}) => {
   const dispatch = useDispatch();
 
   const clickEdit = () => {
-    console.log(ele);
     dispatch(setItem(ele));
     dispatch(openEditModal());
   }

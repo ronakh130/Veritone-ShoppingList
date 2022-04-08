@@ -63,7 +63,7 @@ const EditItemModal = () => {
 
   const clickFunc = (event) => {
     event.preventDefault();
-    console.log('edit item');
+
     const name = inputForm.current[0].value;
     const desc = inputForm.current[1].value;
     const count = inputForm.current[2].value;

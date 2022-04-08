@@ -11,21 +11,25 @@ const Dropdown = styled.select`
   color: var(--modal-placeholders);
 `;
 
+const options = [];
+const numOptions = 5;
+let count = 0;
+
+while(count < numOptions){
+  options.push(<option>{++count}</option>);
+}
+
 const ItemNumber = ({ placeholder, text }) => {
   return placeholder ? (
     <Dropdown defaultValue={placeholder}>
       <option disabled hidden>
         {placeholder}
       </option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+      {options}
     </Dropdown>
   ) : (
     <Dropdown defaultValue={text}>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+      {options}
     </Dropdown>
   );
 };
