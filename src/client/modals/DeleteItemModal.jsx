@@ -27,7 +27,7 @@ const TextWrapper = styled.div`
 const DeleteItemModal = () => {
   const dispatch = useDispatch();
 
-  const ind = useSelector((state) => state.modals.ind);
+  const ind = useSelector((state) => state.modals.currItem.ind);
 
   const clickFunc = () => {
     dispatch(removeItem(ind));

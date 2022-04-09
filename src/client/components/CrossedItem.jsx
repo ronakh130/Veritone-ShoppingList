@@ -47,7 +47,7 @@ const ItemDesc = styled.p`
 `;
 
 const CrossedItem = (props) => {
-  const { name, desc, isChecked } = props.item;
+  const { name, desc, isChecked, count } = props.item;
   const ind = props.ind;
 
   return (
@@ -57,7 +57,7 @@ const CrossedItem = (props) => {
         <ItemName>{name}</ItemName>
         <ItemDesc>{desc}</ItemDesc>
       </Textbox>
-      <Controls ele={{ name, desc, isChecked, ind }} ind={ind} />
+      <Controls ele={{ name, desc, isChecked, count, ind }} ind={ind} />
     </ItemWrapper>
   );
 };

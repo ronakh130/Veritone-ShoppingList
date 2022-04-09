@@ -35,7 +35,7 @@ export const modalSlice = createSlice({
       state.modalOpen = false;
     },
     setItem: (state, action) => {
-      Object.assign(state.currItem, action.payload);
+      state.currItem = Object.assign(state.currItem, action.payload);
     },
   },
 });
