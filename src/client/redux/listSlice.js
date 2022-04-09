@@ -2,8 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   shoppingList: [],
-  itemCount: {},
-  addModalOpen: false,
 };
 
 export const listSlice = createSlice({
@@ -14,7 +12,7 @@ export const listSlice = createSlice({
       const { name, desc, num } = action.payload;
       let counter = num;
       while (counter > 0) {
-        state.shoppingList.push({ name, desc, isChecked: false, num: 1 });
+        state.shoppingList.push({ name, desc, isChecked: false, count: 1 });
         counter--;
       }
     },
