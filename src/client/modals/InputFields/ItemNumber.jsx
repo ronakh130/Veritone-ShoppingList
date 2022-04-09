@@ -16,7 +16,7 @@ const numOptions = 5;
 let count = 0;
 
 while (count < numOptions) {
-  options.push(<option>{++count}</option>);
+  options.push(<option key={++count}>{count}</option>);
 }
 
 const ItemNumber = ({ placeholder, text }) => {

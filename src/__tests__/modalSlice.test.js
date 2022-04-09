@@ -9,11 +9,13 @@ describe('modalSlice reducers', () => {
       add: false,
       edit: false,
       del: false,
-      name: '',
-      desc: '',
-      num: 1,
-      ind: 0,
-      isChecked: false,
+      currItem: {
+        name: '',
+        desc: '',
+        count: 1,
+        ind: 0,
+        isChecked: false,
+      },
     };
   });
 
@@ -63,10 +65,10 @@ describe('modalSlice reducers', () => {
         ind: 4,
       };
 
-      const expectedOutput = Object.assign(initialState, action);
-      expectedOutput.num = 2; //since state uses num but action uses count
+      const expectedOutput = Object.assign(initialState.currItem, action);
+      // expectedOutput.num = 2; //since state uses num but action uses count
 
-      expect(reducer(initialState, setItem(action))).toEqual(expectedOutput);
+      expect(reducer(initialState, setItem(action)).currItem).toEqual(expectedOutput);
     });
   });
 });

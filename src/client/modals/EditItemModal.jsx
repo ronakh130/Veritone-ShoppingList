@@ -53,11 +53,13 @@ const PurchasedText = styled.label`
 const EditItemModal = () => {
   const dispatch = useDispatch();
 
-  const itemName = useSelector((state) => state.modals.name);
-  const itemDesc = useSelector((state) => state.modals.desc);
-  const itemNum = useSelector((state) => state.modals.num);
-  const itemCheck = useSelector((state) => state.modals.isChecked);
-  const ind = useSelector((state) => state.modals.ind);
+  // const itemName = useSelector((state) => state.modals.name);
+  // const itemDesc = useSelector((state) => state.modals.desc);
+  // const itemNum = useSelector((state) => state.modals.num);
+  // const itemCheck = useSelector((state) => state.modals.isChecked);
+  // const ind = useSelector((state) => state.modals.ind);
+
+  const currItem = useSelector((state) => state.modals.currItem);
 
   const inputForm = useRef();
 
@@ -69,12 +71,14 @@ const EditItemModal = () => {
     const count = inputForm.current[2].value;
     const isChecked = inputForm.current[3].checked;
 
+    const ind = currItem.ind;
+
     if (name.length < 1) {
       alert('Please enter name of item');
     } else if (count.length > 5) {
       alert('Please enter quantity of items to add');
     } else {
-      dispatch(updateItem({ ind, name, desc, isChecked, count }));
+      dispatch(updateItem({ ind, item: { name, desc, isChecked, count } }));
       dispatch(closeModal('edit'));
     }
   };
@@ -86,11 +90,11 @@ const EditItemModal = () => {
         <Title text={'Edit an Item'} />
         <Subtitle text={'Edit your item below'} />
         <FormWrapper ref={inputForm}>
-          <ItemName text={itemName} />
-          <ItemDesc text={itemDesc} />
-          <ItemNumber text={itemNum} />
+          <ItemName text={currItem.name} />
+          <ItemDesc text={currItem.desc} />
+          <ItemNumber text={currItem.count} />
           <TextWrapper>
-            <SubmittedBox type='checkbox' defaultChecked={itemCheck} />
+            <SubmittedBox type='checkbox' defaultChecked={currItem.isChecked} />
             <PurchasedText>Purchased</PurchasedText>
           </TextWrapper>
         </FormWrapper>

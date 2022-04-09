@@ -5,11 +5,13 @@ const initialState = {
   add: false,
   edit: false,
   del: false,
-  name: '',
-  desc: '',
-  num: 1,
-  ind: 0,
-  isChecked: false,
+  currItem: {
+    name: '',
+    desc: '',
+    count: 1,
+    ind: 0,
+    isChecked: false,
+  },
 };
 
 export const modalSlice = createSlice({
@@ -33,12 +35,7 @@ export const modalSlice = createSlice({
       state.modalOpen = false;
     },
     setItem: (state, action) => {
-      const { name, desc, isChecked, count, ind } = action.payload;
-      state.name = name;
-      state.desc = desc;
-      state.isChecked = isChecked;
-      state.num = count;
-      state.ind = ind;
+      Object.assign(state.currItem, action.payload);
     },
   },
 });

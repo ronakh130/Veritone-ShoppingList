@@ -35,7 +35,7 @@ describe('listSlice reducers', () => {
       expect(shoppingList[1].name).toEqual(shoppingList[3].name);
       expect(shoppingList[1].desc).toEqual(shoppingList[3].desc);
       expect(shoppingList[1].isChecked).toEqual(shoppingList[3].isChecked);
-      expect(shoppingList[1].num).toEqual(shoppingList[3].num);
+      expect(shoppingList[1].count).toEqual(shoppingList[3].count);
     });
   });
 
@@ -59,10 +59,12 @@ describe('listSlice reducers', () => {
     it('should update current item with action payload', () => {
       const action = {
         ind: 0,
-        name: 'Eggs',
-        desc: 'Organic',
-        isChecked: false,
-        count: 4,
+        item: {
+          name: 'Eggs',
+          desc: 'Organic',
+          isChecked: false,
+          count: 4,
+        }
       }
 
       const newItem = {

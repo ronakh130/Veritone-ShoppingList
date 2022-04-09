@@ -24,11 +24,8 @@ export const listSlice = createSlice({
       item.isChecked = !item.isChecked;
     },
     updateItem: (state, action) => {
-      const { ind, name, desc, isChecked, count } = action.payload;
-      state.shoppingList[ind].name = name;
-      state.shoppingList[ind].desc = desc;
-      state.shoppingList[ind].isChecked = isChecked;
-      state.shoppingList[ind].count = count;
+      const { ind, item } = action.payload;
+      Object.assign(state.shoppingList[ind], item);
     },
   },
 });
